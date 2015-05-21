@@ -1,0 +1,146 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:keepScreenOn="true">
+
+        <RelativeLayout
+            android:id="@+id/player1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:rotation="180"
+            android:layout_weight="5"
+            android:background="#ff33ff">
+
+            <TextView
+                android:id="@+id/player1Life"
+                android:text="20"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textSize="350px" />
+
+            <Button
+                android:id="@+id/player1Subtract"
+                android:text="-"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/player1Life"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:textSize="35sp"
+                android:onClick="adjustLife" />
+
+            <Button
+                android:id="@+id/player1Add"
+                android:text="+"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/player1Life"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:textSize="30sp"
+                android:onClick="adjustLife" />
+
+            <TextView
+                android:id="@+id/player1Roll"
+                android:visibility="invisible"
+                android:text="6"
+                android:layout_alignParentTop="@+id/player1Life"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="50sp"
+                android:background="@drawable/back" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/settings"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="@android:color/white" >
+
+            <Button
+                    android:id="@+id/settingsButton"
+                    android:text="Reset"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:onClick="reset" />
+
+            <Button
+                android:id="@+id/rollButton"
+                android:text="Roll"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:onClick="roll" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/player2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="5"
+            android:background="#8b00ff">
+
+            <TextView
+                android:id="@+id/player2Life"
+                android:text="20"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:textSize="350px" />
+
+            <Button
+                android:id="@+id/player2Subtract"
+                android:text="-"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/player2Life"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:textSize="35sp"
+                android:onClick="adjustLife" />
+
+            <Button
+                android:id="@+id/player2Add"
+                android:text="+"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/player2Life"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:textSize="30sp"
+                android:onClick="adjustLife" />
+
+            <TextView
+                android:id="@+id/player2Roll"
+                android:visibility="invisible"
+                android:text="6"
+                android:layout_alignParentTop="@+id/player2Life"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textSize="50sp"
+                android:background="@drawable/back" />
+        </RelativeLayout>
+
+</LinearLayout>
