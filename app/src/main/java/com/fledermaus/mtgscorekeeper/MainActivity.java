@@ -53,10 +53,12 @@ public class MainActivity extends ActionBarActivity {
                 life.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-                        if (life.getHeight() >= bgh)
-                            life.setTextSize(TypedValue.COMPLEX_UNIT_PX, life.getTextSize() - 5);
-                        else
-                            life.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                        if (life.getHeight() >= bgh / 2) {
+                            life.setTextSize(TypedValue.COMPLEX_UNIT_PX, life.getTextSize() - 10);
+                        }
+                        //else
+                        //    life.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
                 });
             }
@@ -111,6 +113,13 @@ public class MainActivity extends ActionBarActivity {
 
     public void reset(View view) {
         Random r = new Random();
+        Integer l1 = Integer.parseInt(player1Life.getText().toString());
+        Integer l2 = Integer.parseInt(player2Life.getText().toString());
+
+        if (l1 < -9 || l1 > 99)
+            player1Life.setTextSize(TypedValue.COMPLEX_UNIT_PX, 350);
+        if (l2 < -9 || l2 > 99)
+            player2Life.setTextSize(TypedValue.COMPLEX_UNIT_PX, 350);
         player1Background.setBackgroundColor(Color.rgb(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
         player2Background.setBackgroundColor(Color.rgb(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
         player1Life.setText("20");
