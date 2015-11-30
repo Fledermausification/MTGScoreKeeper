@@ -18,6 +18,10 @@ import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 public class MainActivity extends ActionBarActivity {
+    private static int INITIAL_TEXT_SIZE   = 250;
+    private static int TEXT_SIZE_FACTOR    = 2;
+    private static int TEXT_SIZE_DECREMENT = 10;
+
     RelativeLayout player1Background;
     RelativeLayout player2Background;
     TextView       player1Life;
@@ -54,8 +58,8 @@ public class MainActivity extends ActionBarActivity {
                     @Override
                     public void onGlobalLayout() {
 
-                        if (life.getHeight() >= bgh / 2)
-                            life.setTextSize(TypedValue.COMPLEX_UNIT_PX, life.getTextSize() - 10);
+                        if (life.getHeight() >= bgh / TEXT_SIZE_FACTOR)
+                            life.setTextSize(TypedValue.COMPLEX_UNIT_PX, life.getTextSize() - TEXT_SIZE_DECREMENT);
                         //else
                         //    life.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
@@ -114,8 +118,8 @@ public class MainActivity extends ActionBarActivity {
         Random r = new Random();
         player1Background.setBackgroundColor(Color.rgb(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
         player2Background.setBackgroundColor(Color.rgb(r.nextInt(256), r.nextInt(256), r.nextInt(256)));
-        player1Life.setTextSize(TypedValue.COMPLEX_UNIT_PX, 350);
-        player2Life.setTextSize(TypedValue.COMPLEX_UNIT_PX, 350);
+        player1Life.setTextSize(TypedValue.COMPLEX_UNIT_PX, INITIAL_TEXT_SIZE);
+        player2Life.setTextSize(TypedValue.COMPLEX_UNIT_PX, INITIAL_TEXT_SIZE);
         player1Life.setText("20");
         player2Life.setText("20");
     }
